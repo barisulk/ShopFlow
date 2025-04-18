@@ -41,7 +41,7 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelate = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Clear = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonClear = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.userGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@
             this.userGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userGrid.Size = new System.Drawing.Size(1207, 266);
             this.userGrid.TabIndex = 0;
+            this.userGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.userGrid_RowHeaderMouseClick);
             // 
             // labelFormName
             // 
@@ -204,6 +205,7 @@
             this.btnAdd.Size = new System.Drawing.Size(180, 45);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "EKLE";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -219,6 +221,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(180, 45);
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "GÜNCELLE";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelate
             // 
@@ -234,28 +237,30 @@
             this.btnDelate.Size = new System.Drawing.Size(180, 45);
             this.btnDelate.TabIndex = 15;
             this.btnDelate.Text = "SİL";
+            this.btnDelate.Click += new System.EventHandler(this.btnDelate_Click);
             // 
-            // guna2Clear
+            // buttonClear
             // 
-            this.guna2Clear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Clear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Clear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Clear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Clear.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2Clear.ForeColor = System.Drawing.Color.White;
-            this.guna2Clear.Location = new System.Drawing.Point(633, 365);
-            this.guna2Clear.Margin = new System.Windows.Forms.Padding(10);
-            this.guna2Clear.Name = "guna2Clear";
-            this.guna2Clear.Size = new System.Drawing.Size(180, 45);
-            this.guna2Clear.TabIndex = 16;
-            this.guna2Clear.Text = "Temizle";
+            this.buttonClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonClear.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttonClear.ForeColor = System.Drawing.Color.White;
+            this.buttonClear.Location = new System.Drawing.Point(633, 365);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(180, 45);
+            this.buttonClear.TabIndex = 16;
+            this.buttonClear.Text = "Temizle";
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // UserManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 700);
-            this.Controls.Add(this.guna2Clear);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.btnDelate);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -292,6 +297,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnDelate;
-        private Guna.UI2.WinForms.Guna2Button guna2Clear;
+        private Guna.UI2.WinForms.Guna2Button buttonClear;
     }
 }
