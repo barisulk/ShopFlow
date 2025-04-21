@@ -12,10 +12,17 @@ namespace ShopFlowDesktop.Forms
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private readonly string _userName;
+        private readonly int _userId;
+        public AdminForm(string userName,int userId)
         {
             InitializeComponent();
             profilePicture.ContextMenuStrip = profileMenu;
+
+            _userName = userName;
+            _userId = userId;
+
+            labelName.Text = userName;
 
         }
 

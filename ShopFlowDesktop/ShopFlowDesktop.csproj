@@ -188,6 +188,12 @@
     <Compile Include="Forms\StockHistoryForm.Designer.cs">
       <DependentUpon>StockHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StokManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StokManageForm.Designer.cs">
+      <DependentUpon>StokManageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StokStatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,8 +226,14 @@
     <EmbeddedResource Include="Forms\SalesReportForm.resx">
       <DependentUpon>SalesReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StockHistoryForm.resx">
       <DependentUpon>StockHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StokManageForm.resx">
+      <DependentUpon>StokManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StokStatusForm.resx">
       <DependentUpon>StokStatusForm.cs</DependentUpon>

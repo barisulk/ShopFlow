@@ -49,13 +49,13 @@ namespace ShopFlowDesktop.Forms
                         switch (role)
                         {
                             case "Yönetici":
-                                new AdminForm().Show();
+                                new AdminForm("Admin Kullanıcı",1).Show();
                                 break;
                             case "Satış":
                                 new SalesForm().Show();
                                 break;
                             case "Stok":
-                                new StockForm().Show();
+                                new StockForm("Admin Kullanıcı", 1).Show();
                                 break;
                             default:
                                 MessageBox.Show("Yetki tanımı bulunamadı.");
