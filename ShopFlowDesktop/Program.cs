@@ -18,7 +18,7 @@ namespace ShopFlowDesktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            Application.Run(new StokManageForm(1));
+            Application.Run(new SalesForm());
         }
     }
 }
