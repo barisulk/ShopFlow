@@ -55,9 +55,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(32, 59);
+            this.label1.Location = new System.Drawing.Point(20, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 25);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Başlangıç:";
             // 
@@ -65,9 +66,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(361, 59);
+            this.label2.Location = new System.Drawing.Point(271, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 25);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Bitiş:";
             // 
@@ -75,9 +77,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(8, 155);
+            this.label4.Location = new System.Drawing.Point(6, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 25);
+            this.label4.Size = new System.Drawing.Size(103, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Toplam Adet:";
             // 
@@ -85,27 +88,30 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(12, 187);
+            this.label5.Location = new System.Drawing.Point(9, 152);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 25);
+            this.label5.Size = new System.Drawing.Size(41, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ciro:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 236);
+            this.label6.Location = new System.Drawing.Point(8, 192);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 16);
+            this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Genel Satışlar";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 490);
+            this.label7.Location = new System.Drawing.Point(8, 398);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 16);
+            this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Ürün Detayları";
             // 
@@ -117,9 +123,10 @@
             this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(685, 45);
+            this.btnFilter.Location = new System.Drawing.Point(514, 37);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(133, 39);
+            this.btnFilter.Size = new System.Drawing.Size(100, 32);
             this.btnFilter.TabIndex = 9;
             this.btnFilter.Text = "Filtrele";
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
@@ -132,9 +139,10 @@
             this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(861, 43);
+            this.btnReset.Location = new System.Drawing.Point(646, 35);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(131, 39);
+            this.btnReset.Size = new System.Drawing.Size(98, 32);
             this.btnReset.TabIndex = 10;
             this.btnReset.Text = "Temizle";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -143,9 +151,10 @@
             // 
             this.lblTotalSales.AutoSize = true;
             this.lblTotalSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalSales.Location = new System.Drawing.Point(134, 129);
+            this.lblTotalSales.Location = new System.Drawing.Point(100, 105);
+            this.lblTotalSales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalSales.Name = "lblTotalSales";
-            this.lblTotalSales.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalSales.Size = new System.Drawing.Size(16, 17);
             this.lblTotalSales.TabIndex = 12;
             this.lblTotalSales.Text = "0";
             // 
@@ -153,9 +162,10 @@
             // 
             this.lblTotalQuantity.AutoSize = true;
             this.lblTotalQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalQuantity.Location = new System.Drawing.Point(134, 158);
+            this.lblTotalQuantity.Location = new System.Drawing.Point(100, 128);
+            this.lblTotalQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalQuantity.Name = "lblTotalQuantity";
-            this.lblTotalQuantity.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalQuantity.Size = new System.Drawing.Size(16, 17);
             this.lblTotalQuantity.TabIndex = 13;
             this.lblTotalQuantity.Text = "0";
             // 
@@ -163,33 +173,37 @@
             // 
             this.lblTotalRevenue.AutoSize = true;
             this.lblTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalRevenue.Location = new System.Drawing.Point(134, 188);
+            this.lblTotalRevenue.Location = new System.Drawing.Point(100, 153);
+            this.lblTotalRevenue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
-            this.lblTotalRevenue.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalRevenue.Size = new System.Drawing.Size(16, 17);
             this.lblTotalRevenue.TabIndex = 14;
             this.lblTotalRevenue.Text = "0";
             // 
             // dtStart
             // 
-            this.dtStart.Location = new System.Drawing.Point(138, 62);
+            this.dtStart.Location = new System.Drawing.Point(104, 50);
+            this.dtStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(200, 22);
+            this.dtStart.Size = new System.Drawing.Size(151, 20);
             this.dtStart.TabIndex = 15;
             // 
             // dtEnd
             // 
-            this.dtEnd.Location = new System.Drawing.Point(425, 60);
+            this.dtEnd.Location = new System.Drawing.Point(319, 49);
+            this.dtEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtEnd.Name = "dtEnd";
-            this.dtEnd.Size = new System.Drawing.Size(200, 22);
+            this.dtEnd.Size = new System.Drawing.Size(151, 20);
             this.dtEnd.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(8, 126);
+            this.label3.Location = new System.Drawing.Point(6, 102);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Satış Sayısı:";
             // 
@@ -197,41 +211,45 @@
             // 
             this.salesDetailsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.salesDetailsGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.salesDetailsGrid.Location = new System.Drawing.Point(0, 528);
+            this.salesDetailsGrid.Location = new System.Drawing.Point(0, 429);
+            this.salesDetailsGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.salesDetailsGrid.Name = "salesDetailsGrid";
             this.salesDetailsGrid.ReadOnly = true;
             this.salesDetailsGrid.RowHeadersWidth = 51;
             this.salesDetailsGrid.RowTemplate.Height = 24;
-            this.salesDetailsGrid.Size = new System.Drawing.Size(1031, 191);
+            this.salesDetailsGrid.Size = new System.Drawing.Size(773, 155);
             this.salesDetailsGrid.TabIndex = 17;
             // 
             // salesGrid
             // 
             this.salesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.salesGrid.Location = new System.Drawing.Point(-2, 269);
+            this.salesGrid.Location = new System.Drawing.Point(-2, 219);
+            this.salesGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.salesGrid.Name = "salesGrid";
             this.salesGrid.ReadOnly = true;
             this.salesGrid.RowHeadersWidth = 51;
             this.salesGrid.RowTemplate.Height = 24;
-            this.salesGrid.Size = new System.Drawing.Size(1034, 198);
+            this.salesGrid.Size = new System.Drawing.Size(776, 161);
             this.salesGrid.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(680, 118);
+            this.label8.Location = new System.Drawing.Point(510, 96);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 25);
+            this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = "Kullanıcı:";
             // 
             // cmbUsers
             // 
             this.cmbUsers.FormattingEnabled = true;
-            this.cmbUsers.Location = new System.Drawing.Point(777, 118);
+            this.cmbUsers.Location = new System.Drawing.Point(583, 96);
+            this.cmbUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbUsers.Name = "cmbUsers";
-            this.cmbUsers.Size = new System.Drawing.Size(215, 24);
+            this.cmbUsers.Size = new System.Drawing.Size(162, 21);
             this.cmbUsers.TabIndex = 20;
             // 
             // btnExportExcel
@@ -242,18 +260,19 @@
             this.btnExportExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnExportExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExportExcel.Location = new System.Drawing.Point(787, 158);
+            this.btnExportExcel.Location = new System.Drawing.Point(590, 128);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(205, 39);
+            this.btnExportExcel.Size = new System.Drawing.Size(154, 32);
             this.btnExportExcel.TabIndex = 22;
             this.btnExportExcel.Text = "Excel\'e Aktar";
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // SalesReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 719);
+            this.ClientSize = new System.Drawing.Size(773, 584);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.cmbUsers);
             this.Controls.Add(this.label8);
@@ -273,6 +292,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SalesReportForm";
             this.Text = "SalesReportForm";
             ((System.ComponentModel.ISupportInitialize)(this.salesDetailsGrid)).EndInit();
