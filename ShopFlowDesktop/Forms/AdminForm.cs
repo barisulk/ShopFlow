@@ -51,22 +51,41 @@ namespace ShopFlowDesktop.Forms
             OpenChildForm(new UserManagementForm());
         }
 
+        private void buttonProduct_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ProductManagment());
+        }
+
+        private void buttonSales_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new SalesReportForm());
+        }
+
+        private void buttonStocks_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new StokStatusForm());
+        }
+
         private Form aktif_form = null;
 
         private void OpenChildForm(Form childForm)
         {
-            if (aktif_form != null) 
+            if (aktif_form != null)
             {
-                aktif_form = childForm;
-                childForm.TopLevel = false;
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Fill;
-                panelMain.Controls.Add(childForm);
-                panelMain.Tag = childForm;
-                childForm.BringToFront();
-                childForm.Show();
-
+                aktif_form.Close(); // varsa eski ekranı kapat
             }
+
+            aktif_form = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear(); // paneli temizle
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
+
+       
     }
 }

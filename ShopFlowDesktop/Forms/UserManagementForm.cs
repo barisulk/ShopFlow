@@ -136,7 +136,7 @@ namespace ShopFlowDesktop.Forms
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Id", selectedUserId);
                 cmd.Parameters.AddWithValue("@Name", textBoxName.Text);
-                cmd.Parameters.AddWithValue("@Email", textBoxName.Text);
+                cmd.Parameters.AddWithValue("@Email", textBoxMail.Text);
                 cmd.Parameters.AddWithValue("@Role", comboBoxRole.Text);
 
                 if (!string.IsNullOrWhiteSpace(textBoxPassword.Text))

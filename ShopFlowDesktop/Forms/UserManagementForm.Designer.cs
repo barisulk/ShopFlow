@@ -65,7 +65,7 @@
             this.labelFormName.AutoSize = true;
             this.labelFormName.Cursor = System.Windows.Forms.Cursors.No;
             this.labelFormName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelFormName.Location = new System.Drawing.Point(501, 21);
+            this.labelFormName.Location = new System.Drawing.Point(11, 19);
             this.labelFormName.Margin = new System.Windows.Forms.Padding(10);
             this.labelFormName.Name = "labelFormName";
             this.labelFormName.Size = new System.Drawing.Size(245, 31);
@@ -80,7 +80,7 @@
             this.labelName.Location = new System.Drawing.Point(12, 149);
             this.labelName.Margin = new System.Windows.Forms.Padding(10);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(143, 31);
+            this.labelName.Size = new System.Drawing.Size(114, 25);
             this.labelName.TabIndex = 2;
             this.labelName.Text = "Ad Soyad:";
             // 
@@ -92,7 +92,7 @@
             this.labelEmail.Location = new System.Drawing.Point(12, 204);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(10);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(120, 31);
+            this.labelEmail.Size = new System.Drawing.Size(96, 25);
             this.labelEmail.TabIndex = 3;
             this.labelEmail.Text = "E-Posta:";
             // 
@@ -104,7 +104,7 @@
             this.labelPassword.Location = new System.Drawing.Point(12, 256);
             this.labelPassword.Margin = new System.Windows.Forms.Padding(10);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(88, 31);
+            this.labelPassword.Size = new System.Drawing.Size(70, 25);
             this.labelPassword.TabIndex = 4;
             this.labelPassword.Text = "Şifre: ";
             // 
@@ -116,7 +116,7 @@
             this.labelRole.Location = new System.Drawing.Point(12, 300);
             this.labelRole.Margin = new System.Windows.Forms.Padding(10);
             this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(63, 31);
+            this.labelRole.Size = new System.Drawing.Size(50, 25);
             this.labelRole.TabIndex = 5;
             this.labelRole.Text = "Rol:";
             // 

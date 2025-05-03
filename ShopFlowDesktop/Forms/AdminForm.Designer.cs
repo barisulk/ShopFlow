@@ -52,12 +52,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.profileMenu.SuspendLayout();
-            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.profilePicture);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -123,6 +123,7 @@
             this.buttonStocks.TabIndex = 5;
             this.buttonStocks.Text = "Stok Durumu\n";
             this.buttonStocks.UseVisualStyleBackColor = false;
+            this.buttonStocks.Click += new System.EventHandler(this.buttonStocks_Click);
             // 
             // buttonSales
             // 
@@ -134,6 +135,7 @@
             this.buttonSales.TabIndex = 4;
             this.buttonSales.Text = "Satış Raporları";
             this.buttonSales.UseVisualStyleBackColor = false;
+            this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
             // 
             // buttonProduct
             // 
@@ -145,6 +147,7 @@
             this.buttonProduct.TabIndex = 3;
             this.buttonProduct.Text = "Ürün Yönetimi";
             this.buttonProduct.UseVisualStyleBackColor = false;
+            this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
             // 
             // buttonUsers
             // 
@@ -171,12 +174,13 @@
             // profilePicture
             // 
             this.profilePicture.Image = ((System.Drawing.Image)(resources.GetObject("profilePicture.Image")));
-            this.profilePicture.Location = new System.Drawing.Point(1084, 12);
+            this.profilePicture.Location = new System.Drawing.Point(284, 22);
             this.profilePicture.Name = "profilePicture";
             this.profilePicture.Size = new System.Drawing.Size(37, 50);
             this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.profilePicture.TabIndex = 1;
             this.profilePicture.TabStop = false;
+            this.profilePicture.Click += new System.EventHandler(this.profilToolStripMenuItem_Click);
             // 
             // profileMenu
             // 
@@ -190,21 +194,20 @@
             // profilToolStripMenuItem
             // 
             this.profilToolStripMenuItem.Name = "profilToolStripMenuItem";
-            this.profilToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.profilToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.profilToolStripMenuItem.Text = "Profil";
             this.profilToolStripMenuItem.Click += new System.EventHandler(this.profilToolStripMenuItem_Click);
             // 
             // çıkışYapToolStripMenuItem
             // 
             this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
-            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
             this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.cikisYapToolStripMenuItem_Click);
             // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelMain.Controls.Add(this.profilePicture);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(349, 0);
             this.panelMain.Name = "panelMain";
@@ -231,7 +234,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.profileMenu.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
