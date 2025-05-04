@@ -28,7 +28,7 @@ namespace ShopFlowDesktop.Forms
 
         private void profilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Profil Ekranı Çok Yakında");
+            new UserProfileForm(_userId);
         }
 
         private void cikisYapToolStripMenuItem_Click(object sender, EventArgs e)
