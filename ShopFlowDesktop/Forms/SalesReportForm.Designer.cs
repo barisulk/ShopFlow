@@ -44,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.salesDetailsGrid = new System.Windows.Forms.DataGridView();
             this.salesGrid = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbUsers = new System.Windows.Forms.ComboBox();
             this.btnExportExcel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.salesDetailsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesGrid)).BeginInit();
@@ -103,7 +101,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 490);
+            this.label7.Location = new System.Drawing.Point(10, 484);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 6;
@@ -133,7 +131,7 @@
             this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(861, 43);
+            this.btnReset.Location = new System.Drawing.Point(861, 46);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(131, 39);
@@ -145,7 +143,7 @@
             // 
             this.lblTotalSales.AutoSize = true;
             this.lblTotalSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalSales.Location = new System.Drawing.Point(133, 129);
+            this.lblTotalSales.Location = new System.Drawing.Point(145, 129);
             this.lblTotalSales.Name = "lblTotalSales";
             this.lblTotalSales.Size = new System.Drawing.Size(18, 20);
             this.lblTotalSales.TabIndex = 12;
@@ -155,7 +153,7 @@
             // 
             this.lblTotalQuantity.AutoSize = true;
             this.lblTotalQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalQuantity.Location = new System.Drawing.Point(133, 158);
+            this.lblTotalQuantity.Location = new System.Drawing.Point(144, 158);
             this.lblTotalQuantity.Name = "lblTotalQuantity";
             this.lblTotalQuantity.Size = new System.Drawing.Size(18, 20);
             this.lblTotalQuantity.TabIndex = 13;
@@ -165,7 +163,7 @@
             // 
             this.lblTotalRevenue.AutoSize = true;
             this.lblTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalRevenue.Location = new System.Drawing.Point(133, 188);
+            this.lblTotalRevenue.Location = new System.Drawing.Point(144, 187);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
             this.lblTotalRevenue.Size = new System.Drawing.Size(18, 20);
             this.lblTotalRevenue.TabIndex = 14;
@@ -173,7 +171,7 @@
             // 
             // dtStart
             // 
-            this.dtStart.Location = new System.Drawing.Point(139, 62);
+            this.dtStart.Location = new System.Drawing.Point(140, 63);
             this.dtStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtStart.Name = "dtStart";
             this.dtStart.Size = new System.Drawing.Size(200, 22);
@@ -181,7 +179,7 @@
             // 
             // dtEnd
             // 
-            this.dtEnd.Location = new System.Drawing.Point(425, 60);
+            this.dtEnd.Location = new System.Drawing.Point(426, 61);
             this.dtEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtEnd.Name = "dtEnd";
             this.dtEnd.Size = new System.Drawing.Size(200, 22);
@@ -201,13 +199,13 @@
             // 
             this.salesDetailsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.salesDetailsGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.salesDetailsGrid.Location = new System.Drawing.Point(0, 528);
+            this.salesDetailsGrid.Location = new System.Drawing.Point(0, 517);
             this.salesDetailsGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.salesDetailsGrid.Name = "salesDetailsGrid";
             this.salesDetailsGrid.ReadOnly = true;
             this.salesDetailsGrid.RowHeadersWidth = 51;
             this.salesDetailsGrid.RowTemplate.Height = 24;
-            this.salesDetailsGrid.Size = new System.Drawing.Size(1031, 191);
+            this.salesDetailsGrid.Size = new System.Drawing.Size(1050, 208);
             this.salesDetailsGrid.TabIndex = 17;
             // 
             // salesGrid
@@ -221,25 +219,6 @@
             this.salesGrid.RowTemplate.Height = 24;
             this.salesGrid.Size = new System.Drawing.Size(1035, 198);
             this.salesGrid.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(680, 118);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 25);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Kullanıcı:";
-            // 
-            // cmbUsers
-            // 
-            this.cmbUsers.FormattingEnabled = true;
-            this.cmbUsers.Location = new System.Drawing.Point(777, 118);
-            this.cmbUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbUsers.Name = "cmbUsers";
-            this.cmbUsers.Size = new System.Drawing.Size(215, 24);
-            this.cmbUsers.TabIndex = 20;
             // 
             // btnExportExcel
             // 
@@ -261,10 +240,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 719);
+            this.ClientSize = new System.Drawing.Size(1050, 725);
             this.Controls.Add(this.btnExportExcel);
-            this.Controls.Add(this.cmbUsers);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.salesGrid);
             this.Controls.Add(this.salesDetailsGrid);
             this.Controls.Add(this.dtEnd);
@@ -309,8 +286,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView salesDetailsGrid;
         private System.Windows.Forms.DataGridView salesGrid;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbUsers;
         private Guna.UI2.WinForms.Guna2Button btnExportExcel;
     }
 }

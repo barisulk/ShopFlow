@@ -52,7 +52,7 @@ namespace ShopFlowDesktop.Forms
                                 new AdminForm("Admin Kullanıcı",1).Show();
                                 break;
                             case "Satış":
-                                new SalesForm().Show();
+                                new SalesForm(1).Show();
                                 break;
                             case "Stok":
                                 new StockForm("Admin Kullanıcı", 1).Show();

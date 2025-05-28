@@ -26,9 +26,18 @@ namespace ShopFlowDesktop.Forms
 
         }
 
+        private void profilePicture_Click(object sender, EventArgs e)
+        {
+            if (profileMenu != null)
+            {
+                profileMenu.Show(Cursor.Position);
+            }
+        }
+
+
         private void profilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new UserProfileForm(_userId);
+            new UserProfileForm(_userId).ShowDialog();
         }
 
         private void cikisYapToolStripMenuItem_Click(object sender, EventArgs e)

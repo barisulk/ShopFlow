@@ -23,6 +23,25 @@ namespace ShopFlowDesktop.Forms
             InitializeComponent();
         }
 
+        private void LoadUsers()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id,Name FROM Users";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                dt.Rows.InsertAt(dt.NewRow(), 0);
+                dt.Rows[0]["Id"] = DBNull.Value;
+                dt.Rows[0]["Name"] = "Tümü";
+
+             
+            }
+        }
+
         private void LoadSales(DateTime startDate, DateTime endDate)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -43,11 +62,7 @@ namespace ShopFlowDesktop.Forms
                 cmd.Parameters.AddWithValue("@StartDate", startDate.Date);
                 cmd.Parameters.AddWithValue("@EndDate", endDate.Date.AddDays(1).AddSeconds(-1));
 
-                if (cmbUsers.SelectedValue != null && cmbUsers.SelectedValue != DBNull.Value)
-                {
-                    query += " AND S.UserId = @UserId";
-                    cmd.Parameters.AddWithValue("@UserId", cmbUsers.SelectedValue);
-                }
+               
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -81,9 +96,21 @@ namespace ShopFlowDesktop.Forms
         {
             dtStart.Value = DateTime.Today.AddDays(-30);
             dtEnd.Value = DateTime.Today;
-            LoadSales(dtStart.Value, dtEnd.Value);
-            LoadSaleDetails(dtStart.Value, dtEnd.Value);
+
+            // ⬇️ Grid'leri sıfırla
+            salesGrid.DataSource = null;
+            salesDetailsGrid.DataSource = null;
+
+            // ⬇️ Sayısal etiketleri sıfırla
+            lblTotalSales.Text = "0";
+            lblTotalRevenue.Text = "₺0.00";
+            lblTotalQuantity.Text = "0";
+
+            // ⬇️ Yeniden veri yükle (istersen)
+            // LoadSales(dtStart.Value, dtEnd.Value);
+            // LoadSaleDetails(dtStart.Value, dtEnd.Value);
         }
+
 
         private void SalesReportForm_Load(object sender, EventArgs e)
         {
@@ -131,28 +158,7 @@ namespace ShopFlowDesktop.Forms
                 lblTotalQuantity.Text = totalQuantity.ToString();
             }
         }
-
-        private void LoadUsers()
-        {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                string query = "SELECT Id,Name FROM Users";
-                SqlCommand cmd = new SqlCommand(query,con);
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-
-                dt.Rows.InsertAt(dt.NewRow(), 0);
-                dt.Rows[0]["Id"] = DBNull.Value;
-                dt.Rows[0]["Name"] = "Tümü";
-
-                cmbUsers.DisplayMember = "Name";
-                cmbUsers.ValueMember = "Id";
-                cmbUsers.DataSource = dt;
-            }
-        }
-
+        
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())

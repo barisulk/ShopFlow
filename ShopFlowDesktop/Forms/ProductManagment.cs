@@ -119,7 +119,7 @@ namespace ShopFlowDesktop.Forms
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", txtProductName.Text);
                 cmd.Parameters.AddWithValue("@Barcode", txtBarcode.Text);
-                cmd.Parameters.AddWithValue("@Category", cmbFilterCategory.Text);
+                cmd.Parameters.AddWithValue("@Category", txtCategory.Text);
                 cmd.Parameters.AddWithValue("@Stock", (int)numStock.Value);
                 cmd.Parameters.AddWithValue("@Price", numPrice.Value);
                 cmd.Parameters.AddWithValue("@ImageUrl", selectedImageFileName);
@@ -148,7 +148,7 @@ namespace ShopFlowDesktop.Forms
                 cmd.Parameters.AddWithValue("@Id", selectedProductId);
                 cmd.Parameters.AddWithValue("@Name", txtProductName.Text);
                 cmd.Parameters.AddWithValue("@Barcode", txtBarcode.Text);
-                cmd.Parameters.AddWithValue("@Category", cmbFilterCategory.Text);
+                cmd.Parameters.AddWithValue("@Category", txtCategory.Text);
                 cmd.Parameters.AddWithValue("@Stock", (int)numStock.Value);
                 cmd.Parameters.AddWithValue("@Price", numPrice.Value);
                 cmd.Parameters.AddWithValue("@ImageUrl", selectedImageFileName);
@@ -170,18 +170,25 @@ namespace ShopFlowDesktop.Forms
                 return;
             }
 
-            var result = MessageBox.Show("Ürünü silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var result = MessageBox.Show("Ürünü ve stok geçmişini silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    string query = "DELETE FROM Products WHERE Id = @Id";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@Id", selectedProductId);
-
                     con.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Ürün silindi.");
+
+                    // 1. Adım: Stock_Changes tablosundaki ilişkili kayıtları sil
+                    SqlCommand deleteStockChanges = new SqlCommand("DELETE FROM Stock_Changes WHERE ProductId = @Id", con);
+                    deleteStockChanges.Parameters.AddWithValue("@Id", selectedProductId);
+                    deleteStockChanges.ExecuteNonQuery();
+
+                    // 2. Adım: Products tablosundan ürünü sil
+                    SqlCommand deleteProduct = new SqlCommand("DELETE FROM Products WHERE Id = @Id", con);
+                    deleteProduct.Parameters.AddWithValue("@Id", selectedProductId);
+                    deleteProduct.ExecuteNonQuery();
+
+                    MessageBox.Show("Ürün ve stok geçmişi başarıyla silindi.");
+
                     ClearForm();
                     LoadProducts();
                     LoadCategories();
@@ -189,12 +196,13 @@ namespace ShopFlowDesktop.Forms
             }
         }
 
+
         private void productGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             selectedProductId = Convert.ToInt32(productGrid.Rows[e.RowIndex].Cells["Id"].Value);
             txtProductName.Text = productGrid.Rows[e.RowIndex].Cells["Name"].Value.ToString();
             txtBarcode.Text = productGrid.Rows[e.RowIndex].Cells["Barcode"].Value.ToString();
-            cmbFilterCategory.Text = productGrid.Rows[e.RowIndex].Cells["Category"].Value.ToString();
+            txtCategory.Text = productGrid.Rows[e.RowIndex].Cells["Category"].Value.ToString();
             numStock.Value = Convert.ToInt32(productGrid.Rows[e.RowIndex].Cells["StockQuantity"].Value);
             numPrice.Value = Convert.ToDecimal(productGrid.Rows[e.RowIndex].Cells["Price"].Value);
 
@@ -233,6 +241,7 @@ namespace ShopFlowDesktop.Forms
         private void ClearForm()
         {
             txtProductName.Clear();
+            txtCategory.Clear();
             txtBarcode.Clear();
             cmbFilterCategory.SelectedIndex = -1;
             numStock.Value = 0;

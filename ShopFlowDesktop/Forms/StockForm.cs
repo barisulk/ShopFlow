@@ -26,14 +26,23 @@ namespace ShopFlowDesktop.Forms
             profilePicture.ContextMenuStrip = profileMenu;
         }
 
-        private void LoadForm(Form form)
+        private Form aktif_form = null;
+        private void LoadForm(Form childForm)
         {
-            panelMain.Controls.Clear();
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(form);
-            form.Show();
+            if (aktif_form != null)
+            {
+                aktif_form.Close(); // varsa eski ekranı kapat
+            }
+
+            aktif_form = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_main.Controls.Clear(); // paneli temizle
+            panel_main.Controls.Add(childForm);
+            panel_main.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void btnStockManage_Click(object sender, EventArgs e)
@@ -48,7 +57,7 @@ namespace ShopFlowDesktop.Forms
 
         private void profilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new UserProfileForm(_userId);
+            new UserProfileForm(_userId).ShowDialog();
         }
 
         private void cikisYapToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,6 +73,11 @@ namespace ShopFlowDesktop.Forms
                 Application.Exit();
 
             }
+        }
+
+        private void profilePicture_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

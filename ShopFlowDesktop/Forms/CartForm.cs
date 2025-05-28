@@ -39,14 +39,15 @@ namespace ShopFlowDesktop.Forms
             {
                 int index = gridCart.Rows.Add();
                 gridCart.Rows[index].Cells["ProductName"].Value = item.ProductName;
-                gridCart.Rows[index].Cells["Price"].Value = item.Price.ToString("C2");
+                gridCart.Rows[index].Cells["Price"].Value = item.UnitPrice.ToString("C2");
                 gridCart.Rows[index].Cells["Quantity"].Value = item.Quantity;
-                gridCart.Rows[index].Cells["Total"].Value = (item.Price * item.Quantity).ToString("C2");
+                gridCart.Rows[index].Cells["Total"].Value = (item.UnitPrice * item.Quantity).ToString("C2");
 
-                total += item.Price * item.Quantity;
+                total += item.UnitPrice * item.Quantity;
             }
 
             lblGrandTotal.Text = $"Toplam: {total:C2}";
+
         }
 
         private void InitializeGrid()
@@ -128,8 +129,12 @@ namespace ShopFlowDesktop.Forms
                         updateCmd.ExecuteNonQuery();
                     }
 
+                    ExportExcel();
                     tran.Commit();
                     MessageBox.Show("Satış başarıyla tamamlandı.");
+                    CheckCriticalStock();
+
+
                     cart.Clear();
                     LoadCart();
                 }
@@ -140,7 +145,7 @@ namespace ShopFlowDesktop.Forms
                 }
             }
         }
-        private void btnExportExcel_Click(object sender, EventArgs e)
+        private void ExportExcel()
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -151,6 +156,7 @@ namespace ShopFlowDesktop.Forms
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
                     using (var pck = new ExcelPackage())
                     {
                         var ws = pck.Workbook.Worksheets.Add("Fatura");
@@ -200,7 +206,44 @@ namespace ShopFlowDesktop.Forms
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
+            cart.Clear();
             this.Close();
+        }
+
+        private void CheckCriticalStock()
+        {
+            List<string> lowStockMessages = new List<string>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string stockQuery = "SELECT Name, StockQuantity FROM Products WHERE StockQuantity <10";
+
+                SqlCommand stockCmd = new SqlCommand(stockQuery, con);
+                SqlDataReader stockReader = stockCmd.ExecuteReader();
+
+                while (stockReader.Read())
+                {
+                    string name = stockReader["Name"].ToString();
+                    int qty = Convert.ToInt32(stockReader["StockQuantity"]);
+                    lowStockMessages.Add($"• {name} (Kalan: {qty})");
+                }
+                stockReader.Close();
+
+                if (lowStockMessages.Count == 0) return;
+
+                string subject = "Kritik Stok Uyarısı";
+                string body = "Aşağıdaki ürünlerin stoğu kritik seviyeye düşmüştür:\n\n" +
+                              string.Join("\n", lowStockMessages);
+
+                /*
+                foreach (string email in emails)
+                {
+                    EmailHelper.Send(email, subject, body);
+                }
+                */
+
+                EmailHelper.Send("barisyusufulak@gmail.com",subject,body);
+            }
         }
     }
 }

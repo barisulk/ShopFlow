@@ -17,12 +17,13 @@ namespace ShopFlowDesktop.Forms
     public partial class SalesForm : Form
     {
         private readonly string connectionString = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=ShopFlowDB;Integrated Security=True;TrustServerCertificate=True";
-
+        private int currentUserId;
         private List<CartItem> cart = new List<CartItem>();
 
-        public SalesForm()
+        public SalesForm(int userId)
         {
             InitializeComponent();
+            currentUserId = userId;
         }
 
         private void SalesForm_Load(object sender, EventArgs e)
@@ -130,11 +131,19 @@ namespace ShopFlowDesktop.Forms
         private void UpdateCartTotal()
         {
             decimal total = cart.Sum(x => x.UnitPrice * x.Quantity);
-            lblTotalAmount.Text = $"₺{total:N2}";
         }
 
-       
+        private void btnShowCart_Click(object sender, EventArgs e)
+        {
+            if (cart.Count == 0)
+            {
+                MessageBox.Show("Sepet boş!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            var cartForm = new CartForm(cart,currentUserId);
+            cartForm.ShowDialog();
+        }
 
     }
 }

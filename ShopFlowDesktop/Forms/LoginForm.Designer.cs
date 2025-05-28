@@ -42,9 +42,10 @@ namespace ShopFlowDesktop.Forms
             this.isim.AutoSize = true;
             this.isim.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isim.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.isim.Location = new System.Drawing.Point(95, 35);
+            this.isim.Location = new System.Drawing.Point(127, 43);
+            this.isim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.isim.Name = "isim";
-            this.isim.Size = new System.Drawing.Size(203, 46);
+            this.isim.Size = new System.Drawing.Size(254, 58);
             this.isim.TabIndex = 0;
             this.isim.Text = "Shop Flow";
             this.isim.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -60,12 +61,13 @@ namespace ShopFlowDesktop.Forms
             this.eposta_input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.eposta_input.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.eposta_input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.eposta_input.Location = new System.Drawing.Point(74, 121);
+            this.eposta_input.Location = new System.Drawing.Point(99, 149);
+            this.eposta_input.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.eposta_input.Name = "eposta_input";
             this.eposta_input.PlaceholderText = "e-posta";
             this.eposta_input.SelectedText = "";
             this.eposta_input.ShadowDecoration.Color = System.Drawing.Color.WhiteSmoke;
-            this.eposta_input.Size = new System.Drawing.Size(250, 25);
+            this.eposta_input.Size = new System.Drawing.Size(333, 31);
             this.eposta_input.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.eposta_input.TabIndex = 1;
             // 
@@ -80,12 +82,13 @@ namespace ShopFlowDesktop.Forms
             this.sifre_input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.sifre_input.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.sifre_input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sifre_input.Location = new System.Drawing.Point(74, 176);
+            this.sifre_input.Location = new System.Drawing.Point(99, 217);
+            this.sifre_input.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sifre_input.Name = "sifre_input";
             this.sifre_input.PlaceholderText = "şifre";
             this.sifre_input.SelectedText = "";
             this.sifre_input.ShadowDecoration.Color = System.Drawing.Color.WhiteSmoke;
-            this.sifre_input.Size = new System.Drawing.Size(250, 25);
+            this.sifre_input.Size = new System.Drawing.Size(333, 31);
             this.sifre_input.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.sifre_input.TabIndex = 2;
             this.sifre_input.UseSystemPasswordChar = true;
@@ -99,29 +102,30 @@ namespace ShopFlowDesktop.Forms
             this.login_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(77)))));
             this.login_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.login_button.ForeColor = System.Drawing.Color.White;
-            this.login_button.Location = new System.Drawing.Point(125, 233);
+            this.login_button.Location = new System.Drawing.Point(167, 287);
+            this.login_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(141, 32);
+            this.login_button.Size = new System.Drawing.Size(188, 39);
             this.login_button.TabIndex = 7;
             this.login_button.Text = "Giriş Yap";
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(113)))), ((int)(((byte)(122)))));
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(512, 444);
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.sifre_input);
             this.Controls.Add(this.eposta_input);
             this.Controls.Add(this.isim);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Giriş";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

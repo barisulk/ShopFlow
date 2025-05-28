@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.flowProductsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblTotalAmount = new System.Windows.Forms.Label();
             this.btnShowCart = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(1111, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Toplam:";
             // 
             // txtSearch
             // 
@@ -71,16 +59,6 @@
             this.flowProductsPanel.Size = new System.Drawing.Size(1353, 564);
             this.flowProductsPanel.TabIndex = 3;
             // 
-            // lblTotalAmount
-            // 
-            this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(1201, 53);
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(29, 31);
-            this.lblTotalAmount.TabIndex = 4;
-            this.lblTotalAmount.Text = "0";
-            // 
             // btnShowCart
             // 
             this.btnShowCart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -94,6 +72,7 @@
             this.btnShowCart.Size = new System.Drawing.Size(175, 47);
             this.btnShowCart.TabIndex = 5;
             this.btnShowCart.Text = "Sepeti Göster";
+            this.btnShowCart.Click += new System.EventHandler(this.btnShowCart_Click);
             // 
             // SalesForm
             // 
@@ -101,25 +80,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 810);
             this.Controls.Add(this.btnShowCart);
-            this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.flowProductsPanel);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesForm";
             this.Load += new System.EventHandler(this.SalesForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.FlowLayoutPanel flowProductsPanel;
-        private System.Windows.Forms.Label lblTotalAmount;
         private Guna.UI2.WinForms.Guna2Button btnShowCart;
     }
 }

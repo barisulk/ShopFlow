@@ -29,6 +29,7 @@ namespace ShopFlowDesktop.Forms
             {
                 string query = "SELECT Name,Email,Role,Password FROM Users WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id",currentUserId);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) 
@@ -36,6 +37,7 @@ namespace ShopFlowDesktop.Forms
                     txtName.Text = reader["Name"].ToString();
                     txtEmail.Text = reader["Email"].ToString();
                     txtRole.Text = reader["Role"].ToString();
+                    currentPassword = reader["Password"].ToString();
                 }
             }
         }
@@ -43,8 +45,8 @@ namespace ShopFlowDesktop.Forms
         private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
             if (txtOldPassword.Text != currentPassword) { MessageBox.Show("Eski şifre yanlış!"); }
-            if (txtOldPassword == null && txtNewPassword == null && txtConfirmPassword == null) { MessageBox.Show("Lütfen alanları eksiksiz doldurunuz"); }
-            if (txtOldPassword == txtNewPassword) { MessageBox.Show("Yeni şifreniz eski şifrenizle aynı olamaz"); }
+            if (txtOldPassword.Text == null && txtNewPassword.Text == null && txtConfirmPassword.Text == null) { MessageBox.Show("Lütfen alanları eksiksiz doldurunuz"); }
+            if (txtOldPassword.Text == txtNewPassword.Text) { MessageBox.Show("Yeni şifreniz eski şifrenizle aynı olamaz"); }
             if (txtNewPassword.Text.Length < 6 ) { MessageBox.Show("Şifreniz 6 karakterden fazla olmalı");}
             if (!txtNewPassword.Text.Any(char.IsLetter)) { MessageBox.Show("Şifrenizde en az 1 tane harf bulunmalı"); }
 
