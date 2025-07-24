@@ -7,8 +7,6 @@ Windows Forms (.NET Framework 4.8) ile geliştirilmiştir.
 - Kullanıcı girişi (rol bazlı: Yönetici, Satış, Stok)
 - SQL Server veritabanı bağlantısı
 - Giriş ekranı tasarımı (Bunifu / Guna UI)
-
-## Devam Eden Geliştirmeler
 - Satış ekranı
 - Stok takibi
 - Raporlama
